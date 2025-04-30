@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Centro de Masa</title>
+    <link rel="stylesheet" href="CalculoCentroDeMasa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-atom"></i> Calculadora de Centro de Masa</h1>
+            <p class="subtitle">Universidad Autónoma de Occidente</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="card">
+                    <h2><i class="fas fa-sliders-h"></i> Datos de Entrada</h2>
+                    <div class="form-group">
+                        <label for="num-particles">Número de Partículas:</label>
+                        <input type="number" id="num-particles" min="1" max="10" value="3">
+                        <button id="generate-inputs" class="btn"><i class="fas fa-check"></i> Generar</button>
+                    </div>
+                    
+                    <div id="particles-inputs">
+                        <!-- Los inputs para las partículas se generarán aquí dinámicamente -->
+                    </div>
+                    
+                    <button id="calculate" class="btn primary-btn"><i class="fas fa-calculator"></i> Calcular Centro de Masa</button>
+                </div>
+            </div>
+            
+            <div class="output-section">
+                <div class="card results-card">
+                    <h2><i class="fas fa-table"></i> Tabla de Cálculos</h2>
+                    <div class="table-container">
+                        <table id="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Partícula</th>
+                                    <th>m<sub>i</sub> (kg)</th>
+                                    <th>x<sub>i</sub> (m)</th>
+                                    <th>m<sub>i</sub>x<sub>i</sub></th>
+                                    <th>y<sub>i</sub> (m)</th>
+                                    <th>m<sub>i</sub>y<sub>i</sub></th>
+                                    <th>z<sub>i</sub> (m)</th>
+                                    <th>m<sub>i</sub>z<sub>i</sub></th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body">
+                                <!-- Los resultados se generarán aquí dinámicamente -->
+                            </tbody>
+                            <tfoot id="results-footer">
+                                <!-- El total se generará aquí dinámicamente -->
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card cm-result">
+                    <h2><i class="fas fa-bullseye"></i> Resultado del Centro de Masa</h2>
+                    <div class="result-content">
+                        <div class="mass-total">
+                            <h3>Masa Total</h3>
+                            <div class="formula">M = ∑m<sub>i</sub> = <span id="mass-total">0.00</span> kg</div>
+                        </div>
+                        <div class="cm-coordinates">
+                            <h3>Coordenadas del Centro de Masa</h3>
+                            <div class="formula">X<sub>CM</sub> = ∑(m<sub>i</sub>x<sub>i</sub>)/M = <span id="x-cm">0.00</span> m</div>
+                            <div class="formula">Y<sub>CM</sub> = ∑(m<sub>i</sub>y<sub>i</sub>)/M = <span id="y-cm">0.00</span> m</div>
+                            <div class="formula">Z<sub>CM</sub> = ∑(m<sub>i</sub>z<sub>i</sub>)/M = <span id="z-cm">0.00</span> m</div>
+                        </div>
+                        <div class="cm-vector">
+                            <h3>Vector Posición</h3>
+                            <div class="vector-formula">
+                                <i class="fas fa-arrow-right"></i> r<sub>CM</sub> = (<span id="x-vec">0.00</span>î + <span id="y-vec">0.00</span>ĵ + <span id="z-vec">0.00</span>k̂) m
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Física: Mecánica | Desarrollado para prácticas educativas | 2025</p>
+        </footer>
+    </div>
+
+    <script src="CalculoCentroDeMasa.js"></script>
+</body>
